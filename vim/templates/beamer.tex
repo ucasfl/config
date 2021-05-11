@@ -1,0 +1,47 @@
+<+	+>	!comp!	!exe!
+%        File: !comp!expand("%:p:t")!comp!
+%     Created: !comp!strftime("%a %b %d %I:00 %p %Y ").substitute(strftime('%Z'), '\<\(\w\)\(\w*\)\>\(\W\|$\)', '\1', 'g')!comp!
+% Last Change: !comp!strftime("%a %b %d %I:00 %p %Y ").substitute(strftime('%Z'), '\<\(\w\)\(\w*\)\>\(\W\|$\)', '\1', 'g')!comp!
+%
+\documentclass{beamer}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{ctex}
+\usepackage{listings}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{xeCJK}
+\usepackage{xcolor}
+\lstset{language = c,numbers=left, keywordstyle= \color{ blue!70 },commentstyle=\color{red!50!green!50!blue!50}, frame=shadowbox, rulesepcolor= \color{ red!20!green!20!blue!20 } 
+} 
+\hypersetup{colorlinks,linkcolor = green, urlcolor = green}
+
+\title{<++>}
+\subtitle{<++>}
+\institute{University of Chinese Academy of Sciences}
+\author{<++>}
+\date{\today}
+\usetheme{CambridgeUS}
+\usecolortheme{dolphin}
+\begin{document}
+\CJKfamily{zhsong}
+\zihao{5}
+
+\begin{frame}
+\titlepage
+\begin{figure}[ht]\centering\includegraphics[scale=0.3]{ucas.jpg}\end{figure}
+\end{frame}
+
+\begin{frame}{Outline}
+\tableofcontents
+\end{frame}
+ 
+\section{<++>}
+
+\begin{frame}{<++>}
+<++>
+\end{frame}
+
+\end{document}
