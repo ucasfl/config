@@ -56,6 +56,7 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'Yggdroot/LeaderF'
 Plug 'preservim/nerdcommenter'
 Plug 'itchyny/lightline.vim'
+"Plug 'dense-analysis/ale'
 Plug 'Shougo/echodoc.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'rhysd/vim-clang-format'
@@ -63,12 +64,14 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'Shougo/echodoc.vim'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'ericcurtin/CurtineIncSw.vim'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries'  }
+Plug 'mdempsky/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh'  }
 call plug#end()
 
 let mapleader=","  "将nerdcommter的默认换行键改为,
 set tags=./.tags;,.tags
 
-nnoremap <C-F> :FlyGrep<CR>
+"nnoremap <C-F> :FlyGrep<CR>
 map <leader>S :call CurtineIncSw()<CR>
 
 nmap <unique> <leader>fr <Plug>LeaderfRgPrompt
@@ -87,9 +90,9 @@ let g:Lf_ShortcutF = '<c-p>'
 let g:Lf_ShortcutB = '<m-n>'
 noremap <c-n> :LeaderfMru<cr>
 "noremap <c-f> :LeaderfFunction!<cr>
-noremap <c-b> :LeaderfBuffer<cr>
-noremap <c-m> :Leaderf! bufTag --right --all<cr>
-let g:Lf_StlSeparator = { 'left': '', 'right': '', 'font': '' }
+"noremap <c-b> :LeaderfBuffer<cr>
+"noremap <c-m> :Leaderf! bufTag --right --all<cr>
+"let g:Lf_StlSeparator = { 'left': '', 'right': '', 'font': '' }
 "
 let g:Lf_RootMarkers = ['.project', '.root', '.svn', '.git']
 let g:Lf_WorkingDirectoryMode = 'Ac'
@@ -188,8 +191,8 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_auto_hover = ''
 let g:ycm_clangd_args=['--header-insertion=never']
 
-let g:clang_use_library = 1
-let g:clang_library_path='/home/fenglv/gentoo/usr/lib/llvm/11/lib64/libclang.so.11'
+"let g:clang_use_library = 1
+"let g:clang_library_path='/home/fenglv/gentoo/usr/lib/llvm/11/lib64/libclang.so.11'
 
 let g:ycm_add_preview_to_completeopt = 0
 let g:ycm_show_diagnostics_ui = 1
@@ -227,4 +230,5 @@ let g:ycm_semantic_triggers =  {
 			\ 'cs,lua,javascript': ['re!\w{2}'],}
 
 "nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-"nmap <silent> <C-j> <Plug>(ale_next_wrap)
+
+au BufRead,BufNewFile ./* set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab tags=tags,../tags
