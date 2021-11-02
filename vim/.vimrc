@@ -64,8 +64,6 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'Shougo/echodoc.vim'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'ericcurtin/CurtineIncSw.vim'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries'  }
-Plug 'mdempsky/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh'  }
 call plug#end()
 
 let mapleader=","  "将nerdcommter的默认换行键改为,
