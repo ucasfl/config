@@ -223,9 +223,6 @@ let g:ycm_log_level = 'debug'
 let &rtp .= ',' . expand( '<sfile>:p:h' )
 filetype plugin indent on
 
-let g:ycm_semantic_triggers =  {
-			\ 'c,cpp,python,java,go,erlang,perl': ['re!\w{2}'],
-			\ 'cs,lua,javascript': ['re!\w{2}'],}
 
 "nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 
