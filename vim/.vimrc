@@ -227,3 +227,5 @@ filetype plugin indent on
 "nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 
 au BufRead,BufNewFile ./* set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab tags=tags,../tags
+
+nmap <space> :
