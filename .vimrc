@@ -56,7 +56,6 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'Yggdroot/LeaderF'
 Plug 'preservim/nerdcommenter'
 Plug 'itchyny/lightline.vim'
-"Plug 'dense-analysis/ale'
 Plug 'Shougo/echodoc.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'rhysd/vim-clang-format'
@@ -64,6 +63,7 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'Shougo/echodoc.vim'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'ericcurtin/CurtineIncSw.vim'
+Plug 'zivyangll/git-blame.vim'
 call plug#end()
 
 let mapleader=","  "将nerdcommter的默认换行键改为,
@@ -82,6 +82,8 @@ vmap <unique> <leader>fra <Plug>LeaderfRgVisualLiteralNoBoundary
 vmap <unique> <leader>frb <Plug>LeaderfRgVisualLiteralBoundary
 vmap <unique> <leader>frc <Plug>LeaderfRgVisualRegexNoBoundary
 vmap <unique> <leader>frd <Plug>LeaderfRgVisualRegexBoundary
+
+nnoremap <Leader>s :<C-u>call gitblame#echo()<CR>
 
 let g:Lf_ShowDevIcons = 0
 let g:Lf_ShortcutF = '<c-p>'
