@@ -138,6 +138,7 @@ set laststatus=2
 set fillchars+=stl:\ ,stlnc:\
 
 colorscheme molokai
+"colorscheme snazzyfied 
 let g:rehash256 = 1
 
 inoremap <C-d> <esc>dd
