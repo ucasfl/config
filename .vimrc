@@ -64,6 +64,8 @@ Plug 'Shougo/echodoc.vim'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'ericcurtin/CurtineIncSw.vim'
 Plug 'zivyangll/git-blame.vim'
+Plug 'Yggdroot/indentLine'
+Plug 'Yggdroot/hiPairs'
 call plug#end()
 
 let mapleader=","  "将nerdcommter的默认换行键改为,
@@ -150,6 +152,8 @@ let g:clang_format#detect_style_file=1
 
 inoremap jk <esc>   
 nnoremap <C-a> :noh<cr>
+
+nnoremap <leader>e :lne<cr>
 
 set hlsearch
 
