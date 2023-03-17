@@ -53,7 +53,7 @@ filetype plugin on
 
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'Yggdroot/LeaderF'
+Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension'  }
 Plug 'preservim/nerdcommenter'
 Plug 'itchyny/lightline.vim'
 Plug 'Shougo/echodoc.vim'
@@ -85,6 +85,8 @@ vmap <unique> <leader>frb <Plug>LeaderfRgVisualLiteralBoundary
 vmap <unique> <leader>frc <Plug>LeaderfRgVisualRegexNoBoundary
 vmap <unique> <leader>frd <Plug>LeaderfRgVisualRegexBoundary
 
+let g:Lf_WorkingDirectoryMode=1
+
 nnoremap <Leader>s :<C-u>call gitblame#echo()<CR>
 
 let g:Lf_ShowDevIcons = 0
@@ -99,11 +101,14 @@ noremap <c-n> :LeaderfMru<cr>
 let g:Lf_RootMarkers = ['.project', '.root', '.svn', '.git']
 let g:Lf_WorkingDirectoryMode = 'Ac'
 let g:Lf_WindowHeight = 0.30
-let g:Lf_CacheDirectory = expand('~/.vim/cache')
+let g:Lf_WindowPosition = 'popup'
+"let g:Lf_CacheDirectory = expand('~/.vim/cache')
+let g:Lf_UseCache = 0
 let g:Lf_ShowRelativePath = 0
 let g:Lf_HideHelp = 1
 let g:Lf_StlColorscheme = 'powerline'
 let g:Lf_PreviewResult = {'Function':0, 'BufTag':0}
+let g:Lf_PreviewInPopup = 1
 
 " Or, you could use vim's popup window feature.
 set cmdheight=2
