@@ -5,9 +5,9 @@ runtime! debian.vim
 "set compatible
 " Vim5 and later versions support syntax highlighting. Uncommenting the next
 " line enables syntax highlighting by default.
-if has("syntax")
-  syntax on
-endif
+"if has("syntax")
+syntax on
+"endif
 " If using a dark background within the editing area and syntax highlighting
 " turn on this option as well
 "set background=dark
@@ -64,15 +64,13 @@ Plug 'Shougo/echodoc.vim'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'ericcurtin/CurtineIncSw.vim'
 Plug 'zivyangll/git-blame.vim'
-Plug 'Yggdroot/indentLine'
-Plug 'Yggdroot/hiPairs'
 call plug#end()
 
 let mapleader=","  "将nerdcommter的默认换行键改为,
 set tags=./.tags;,.tags
 
 "nnoremap <C-F> :FlyGrep<CR>
-map <leader>S :call CurtineIncSw()<CR>
+map <leader>w :call CurtineIncSw()<CR>
 
 nmap <unique> <leader>fr <Plug>LeaderfRgPrompt
 nmap <unique> <leader>fra <Plug>LeaderfRgCwordLiteralNoBoundary
@@ -93,10 +91,6 @@ let g:Lf_ShowDevIcons = 0
 let g:Lf_ShortcutF = '<c-p>'
 let g:Lf_ShortcutB = '<m-n>'
 noremap <c-n> :LeaderfMru<cr>
-"noremap <c-f> :LeaderfFunction!<cr>
-"noremap <c-b> :LeaderfBuffer<cr>
-"noremap <c-m> :Leaderf! bufTag --right --all<cr>
-"let g:Lf_StlSeparator = { 'left': '', 'right': '', 'font': '' }
 "
 let g:Lf_RootMarkers = ['.project', '.root', '.svn', '.git']
 let g:Lf_WorkingDirectoryMode = 'Ac'
@@ -127,9 +121,7 @@ let g:NERDCustomDelimiters = { 'cpp': { 'left': '// ','right': ''  }  }
 let g:NERDCommentEmptyLines = 1
 let g:NERDTrimTrailingWhitespace = 0
 let g:NERDToggleCheckAllLines = 1
-syntax on
-filetype plugin indent on
-syntax enable
+filetype indent on
 "
 " Highlight current line
 au WinLeave * set nocursorline nocursorcolumn
@@ -167,32 +159,6 @@ let g:cpp_member_variable_highlight = 1
 let g:cpp_class_decl_highlight = 1
 let g:cpp_experimental_template_highlight = 1
 
-"let g:ale_sign_column_always = 0
-"let g:ale_sign_error = '>>'
-"let g:ale_sign_warning = '--'
-"let g:ale_linters_explicit = 1
-"let g:ale_completion_delay = 500
-"let g:ale_echo_delay = 20
-"let g:ale_lint_delay = 500
-"let g:ale_echo_msg_format = '[%linter%] %code: %%s'
-"let g:ale_lint_on_text_changed = 'normal'
-"let g:ale_lint_on_insert_leave = 1
-"
-"let g:ale_c_gcc_options = '-Wall -O2 -std=c99'
-"let g:ale_cpp_gcc_options = '-Wall -O2 -std=c++17'
-"let g:ale_c_cppcheck_options = ''
-"let g:ale_cpp_cppcheck_options = ''
-"
-"let g:ale_completion_enabled = 1
-
-"使用clang对c和c++进行语法检查，对python使用pylint进行语法检查
-"let g:ale_linters = {
-"\   'cpp': ['clang'],
-"\   'c': ['clang'],
-"\   'cc': ['clang'],
-"\   'python': ['pylint'],
-"\}
-
 let g:ycm_server_python_interpreter='/home/fenglv/gentoo/usr/bin/python'
 let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
 let g:ycm_autoclose_preview_window_after_insertion = 1
@@ -200,9 +166,6 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 
 let g:ycm_auto_hover = ''
 let g:ycm_clangd_args=['--header-insertion=never']
-
-"let g:clang_use_library = 1
-"let g:clang_library_path='/home/fenglv/gentoo/usr/lib/llvm/11/lib64/libclang.so.11'
 
 let g:ycm_add_preview_to_completeopt = 0
 let g:ycm_show_diagnostics_ui = 1
@@ -214,6 +177,7 @@ let g:ycm_key_invoke_completion = '<c-z>'
 let g:ycm_always_populate_location_list = 1
 
 nnoremap <leader>d :YcmCompleter GoToDefinitionElseDeclaration<CR>
+nnoremap <leader>r :YcmCompleter GoToReferences<CR>
 
 set completeopt=menu,menuone
 
@@ -235,9 +199,4 @@ let g:ycm_log_level = 'debug'
 let &rtp .= ',' . expand( '<sfile>:p:h' )
 filetype plugin indent on
 
-
-"nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-
 au BufRead,BufNewFile ./* set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab tags=tags,../tags
-
-nmap <space> :
