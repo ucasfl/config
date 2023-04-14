@@ -64,6 +64,7 @@ Plug 'Shougo/echodoc.vim'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'ericcurtin/CurtineIncSw.vim'
 Plug 'zivyangll/git-blame.vim'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries'  }
 call plug#end()
 
 let mapleader=","  "将nerdcommter的默认换行键改为,
@@ -200,3 +201,5 @@ let &rtp .= ',' . expand( '<sfile>:p:h' )
 filetype plugin indent on
 
 au BufRead,BufNewFile ./* set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab tags=tags,../tags
+" forbid quick-fix window for vim-go when fmt failed
+let g:go_fmt_fail_silently = 1
