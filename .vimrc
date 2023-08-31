@@ -211,5 +211,5 @@ let g:Lf_RgConfig = [
     \ "--glob=!thirdparty/*"
     \ ]
 
-" search only current wording directory
+" search only current working directory
 let g:Lf_WorkingDirectoryMode = 'c'
