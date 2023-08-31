@@ -97,8 +97,8 @@ let g:Lf_RootMarkers = ['.project', '.root', '.svn', '.git']
 let g:Lf_WorkingDirectoryMode = 'Ac'
 let g:Lf_WindowHeight = 0.30
 let g:Lf_WindowPosition = 'popup'
-"let g:Lf_CacheDirectory = expand('~/.vim/cache')
-let g:Lf_UseCache = 0
+let g:Lf_CacheDirectory = expand('~/.vim/cache')
+"let g:Lf_UseCache = 0
 let g:Lf_ShowRelativePath = 0
 let g:Lf_HideHelp = 1
 let g:Lf_StlColorscheme = 'powerline'
@@ -203,3 +203,13 @@ filetype plugin indent on
 au BufRead,BufNewFile ./* set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab tags=tags,../tags
 " forbid quick-fix window for vim-go when fmt failed
 let g:go_fmt_fail_silently = 1
+
+let g:Lf_RgConfig = [
+    \ "--max-columns=150",
+    \ "--glob=!contrib/*",
+    \ "--glob=!build/*",
+    \ "--glob=!thirdparty/*"
+    \ ]
+
+" search only current wording directory
+let g:Lf_WorkingDirectoryMode = 'c'
